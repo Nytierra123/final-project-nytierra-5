@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelpHub - Charity Profile">
+    <title>HelpHub - Charity Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  text-align: center;
+}
+li a:hover {
+  background-color: #111; li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+  footer p {
+       margin: 0;
+            }
+p {
+    text-align: center;   
+    font-family: 'Roboto', sans-serif;  
+    font-size: 30px; 
+    color: #333;      
+    line-height: 1.6; 
+}
+  footer { background-color: #333; 
+                  color: white; 
+           button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #volunteer-form {
+            display: none; /* Hide form by default */
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+.tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            max-width: 200px;
+            display: none;
+            z-index: 10;
+        }
+
+       
+        .charity-image-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="charity_profile.html">Charity Profile</a></li>
+    </ul>
+
+    <main>
+       
+        <div class="content-wrapper">
+            <img src="https://cdn1.vectorstock.com/i/1000x1000/00/45/charity-logo-design-template-vector-21470045.jpg" width="300" height="200" alt="HelpHub Charity Logo">
+
+            <h1 style="color: red;">Learn More About Your Charity Here</h1>
+
+            <h2>St. Jude Children's Research Hospital</h2>
+            <h3 style="font-size:30px;"Why This Charity?</h3>
+            <p>Help advance research and treatment for childhood cancer. Together, our contributions create powerful change. Just one dollar a day could save a child's life.</p>
+            <img src="https://kidsthatdogood.com/wp-content/uploads/2017/04/St.Judes_.png" width="300" height="200" alt="St. Jude's Hospital">
+            <p><a href="https://www.stjude.org/promotion/impact-giving-pm.html?sc_dcm=58700006946881469&sc_cid=kwp&sc_cat=b&&&&&ds_rl=1285465&ds_rl=1291300&msclkid=9b2dd5603b151a7c2e18b2514a6dca62&utm_source=bing&utm_medium=cpc&utm_campaign=M%20-%20Brand%20BMM%20EL&utm_term=st%20jude%20children%20hospital&utm_content=PM_PR_Dig_Srch_PM_AO_US_Nat_MS_M-Ads_LF_-_-_-_SERP-BMM_Srch-B_-_-_-_Core_-_EL_-_-_Srch&gclid=9b2dd5603b151a7c2e18b2514a6dca62&gclsrc=3p.ds">Visit St. Jude's website!</a></p>
+            <button class="volunteer-btn" onclick="toggleForm()">Volunteer Here</button>
+
+            <div id="volunteer-form">
+                <h3>Volunteer Information</h3>
+                <form id="contact-form">
+                    <label for="name">Name:</label> 
+                    <input type="text" id="name" name="name" required><br> 
+
+                    <label for="email">Email:</label> 
+                    <input type="email" id="email" name="email" required><br> 
+
+                    <label for="phone">Phone:</label> 
+                    <input type="tel" id="phone" name="phone"><br> 
+
+                    <button type="submit">Submit</button> 
+                </form>
+            </div>
+
+            <h2>American Red Cross</h2>
+            <h3 style="font-size:30px;">Why This Charity?</h3>
+            <p>Donating blood or volunteering helps give back to those affected by natural disasters or emergencies.</p>
+            <img src="https://th.bing.com/th/id/R.f2ef1fdda5718b156d192c0d82e343d7?rik=Gnsmd%2fLr%2fUgKEg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2famerican-red-cross-logo-png--900.jpg&ehk=chzIbwa1Uvik0JLgmOmlAsGw1l9Yqkm2Xcz5Zzh0uF4%3d&risl=&pid=ImgRaw&r=0" width="300" height="200" alt="American Red Cross">
+            <p><a href="https://www.redcrossblood.org/give.html/find-drive?cid=brand&med=cpc&source=bing&scode=RSG00000E017&gclsrc=3p.ds">Visit the Red Cross website</a></p>
+            <button class="volunteer-btn" onclick="toggleForm()">Volunteer Here</button>
+ <div id="volunteer-form">
+                <h3>Volunteer Information</h3>
+                <form id="contact-form">
+                    <label for="name">Name:</label> 
+                    <input type="text" id="name" name="name" required><br> 
+
+                    <label for="email">Email:</label> 
+                    <input type="email" id="email" name="email" required><br> 
+
+                    <label for="phone">Phone:</label> 
+                    <input type="tel" id="phone" name="phone"><br> 
+
+                    <button type="submit">Submit</button> 
+                </form>
+            </div>            <h2>The Salvation Army</h2>
+            <h3 style="font-size:30px;">Why This Charity?</h3>
+            <p>The Salvation Army operates rehabilitation facilities across the country, providing help and hope to individuals facing various challenges, including substance abuse. Their residential programs offer spiritual, emotional, and social assistance to help participants live healthy, fulfilling lives.</p>
+            <img src="https://th.bing.com/th/id/OIP.aK-Q7OjBRx4frcBp0I794gHaHa?rs=1&pid=ImgDetMain" width="300" height="200" alt="The Salvation Army">
+            <p><a href="https://www.salvationarmyusa.org/usn/">Visit The Salvation Army website</a></p>
+            <button class="volunteer-btn" onclick="toggleForm()">Volunteer Here</button>
+ <div id="volunteer-form">
+                <h3>Volunteer Information</h3>
+                <form id="contact-form">
+                    <label for="name">Name:</label> 
+                    <input type="text" id="name" name="name" required><br> 
+
+                    <label for="email">Email:</label> 
+                    <input type="email" id="email" name="email" required><br> 
+
+                    <label for="phone">Phone:</label> 
+                    <input type="tel" id="phone" name="phone"><br> 
+
+                    <button type="submit">Submit</button> 
+                </form>
+            </div>          
+        </div>
+    </main>
+          
+    <footer>
+        <p>&copy; 2024 HelpHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        
+        function toggleForm() {
+            var form = document.getElementById('volunteer-form');
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script>
+  
+ <script>
+        
+        function showTooltip(event, text) {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.style.display = 'block';
+            tooltip.style.left = event.pageX + 10 + 'px';
+            tooltip.style.top = event.pageY + 10 + 'px'; 
+            tooltip.textContent = text;
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+
+        
+        function toggleForm() {
+            var form = document.getElementById('volunteer-form');
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>     
+           
