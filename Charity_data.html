@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub - Charity Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .charity {
+            background-color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .charity h2 {
+            margin: 0;
+            color: #5a5a5a;
+        }
+        .charity p {
+            color: #7a7a7a;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Explore Charities to Support</h1>
+    <div id="charities-list"></div>
+    <div id="error-message" class="error" style="display: none;">Sorry, there was an error fetching charity data. Please try again later.</div>
+</div>
+
+<script>
+    const charitiesContainer = document.getElementById("charities-list");
+    const errorMessage = document.getElementById("error-message");
+
+    const apiKey = 'YOUR_CHARITY_NAVIGATOR_API_KEY';  // Replace with your actual Charity Navigator API key
+    const apiUrl = `https://api.data.charitynavigator.org/v2/Organizations?app_id=YOUR_APP_ID&app_key=${apiKey}&search=education`;
+
+    async function fetchCharities() {
+        try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            if (data && data.length > 0) {
+                displayCharities(data);
+            } else {
+                charitiesContainer.innerHTML = '<p>No charities found matching your search criteria.</p>';
+            }
+        } catch (error) {
+            console.error("Error fetching charities:", error);
+            errorMessage.style.display = 'block';
+        }
+    }
+
+    function displayCharities(charities) {
+        charitiesContainer.innerHTML = '';
+        charities.forEach(charity => {
+            const charityElement = document.createElement('div');
+            charityElement.classList.add('charity');
+            charityElement.innerHTML = `
+                <h2>${charity.charityName}</h2>
+                <p><strong>Category:</strong> ${charity.category[0].categoryName}</p>
+                <p><strong>Location:</strong> ${charity.city}, ${charity.stateOrProvince}</p>
+                <p><strong>Rating:</strong> ${charity.rating ? charity.rating.rating : 'Not Available'}</p>
+                <p><a href="${charity.websiteURL}" target="_blank">Visit Website</a></p>
+            `;
+            charitiesContainer.appendChild(charityElement);
+        });
+    }
+
+    
+    fetchCharities();
+</script>
+
+</body>
+</html>
