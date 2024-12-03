@@ -1,84 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charity Information</title>
- <link rel="stylesheet" href="styles.css">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .charity-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .charity-item {
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-    .charity-item h3 {
-      margin: 0;
-    }
-    .error-message {
-      color: red;
-      font-weight: bold;
-    }
-    li {
-  display: inline-block;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-   font-size: 30px;
-}
-
-li a:hover {
-  background-color: #111; 
-}
- 
-p {
-    text-align: center;   
-    font-family: 'Roboto', sans-serif;  
-    font-size: 30px; 
-    color: #333;      
-    line-height: 1.6;
-}
-
- footer { background-color: #333; 
-                  color: white; 
-                  background: red;
-                  text-align: center; 
-                  padding: 20px; 
-                  margin-top: auto;
-                  z-index: 1;  
-                  margin: 0;  
-            footer p {
-                  margin: 0; 
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>HelpHub - Volunteer Opportunities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .volunteer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .volunteer-item {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .volunteer-item h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
- <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="charities.html">Charities</a></li>
-        <li><a href="charity_profile.html">Charity Profile</a></li>
-       <li><a href="charity_info.html">Charity information</a></li>
-    </ul>
-<img src= "https://www.charitynavigator.org/content/dam/cn/cn/og-images/homepage-og.png" Width="300" height="200">
-  <h1>Top-Rated Charities</h1>
-  <ul class="charity-list" id="charity-list"></ul>
-  <div class="error-message" id="error-message"></div>
-  <footer>
-        <p>&copy; 2024 HelpHub. All rights reserved.</p>
-    </footer>
+    <h1>Volunteer Opportunities</h1>
+    <p>Find out how to volunteer and give back to your community.</p>
 
-  <script src="app.js"></script>
+    <!-- Error message placeholder -->
+    <div id="error" class="error-message" style="display: none;"></div>
 
+    <!-- List to display volunteer opportunities -->
+    <ul id="volunteer-list" class="volunteer-list"></ul>
+
+    <script>
+        // VolunteerMatch API endpoint and key (replace with your actual API key)
+        const apiKey = 'YOUR_VOLUNTEER_MATCH_API_KEY';
+        const apiUrl = 'https://www.volunteermatch.org/api/calls/volunteering_opportunities.json';
+
+        // Function to fetch and display volunteer opportunities
+        async function fetchVolunteerOpportunities() {
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch volunteer opportunities');
+                }
+
+                const data = await response.json();
+                const volunteerList = document.getElementById('volunteer-list');
+
+                // Clear any previous results
+                volunteerList.innerHTML = '';
+
+                // Check if there are volunteer opportunities
+                if (data.length === 0) {
+                    document.getElementById('error').innerText = 'No volunteer opportunities found.';
+                    document.getElementById('error').style.display = 'block';
+                    return;
+                }
+
+                // Display the fetched volunteer opportunities
+                data.forEach(opportunity => {
+                    const li = document.createElement('li');
+                    li.classList.add('volunteer-item');
+
+                    // Create the content for each volunteer opportunity
+                    li.innerHTML = `
+                        <h3>${opportunity.title}</h3>
+                        <p><strong>Location:</strong> ${opportunity.location}</p>
+                        <p><strong>Description:</strong> ${opportunity.description}</p>
+                        <a href="${opportunity.url}" target="_blank">Learn More</a>
+                    `;
+
+                    // Append each opportunity to the list
+                    volunteerList.appendChild(li);
+                });
+
+            } catch (error) {
+                // Handle any errors that occurred during the API call
+                document.getElementById('error').innerText = `Error: ${error.message}`;
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        // Call the function to fetch and display volunteer opportunities when the page loads
+        window.onload = fetchVolunteerOpportunities;
+    </script>
 </body>
 </html>
