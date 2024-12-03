@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Charity - HelpHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        .registration-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #111;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="charity_profile.html">Charity Profile</a></li>
+        <li><a href="charity_info.html">Charity Information</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="register_charity.html">Register Charity</a></li> 
+    </ul>
+
+    <div class="registration-container">
+        <h1> Dont see your charity you can register your charity below</h1>
+        <p>Fill out the form below to register your charity with HelpHub.</p>
+
+        <form action="submit_charity_registration.php" method="POST">
+            <label for="charity_name">Charity Name:</label>
+            <input type="text" id="charity_name" name="charity_name" required>
+
+            <label for="charity_email">Charity Email:</label>
+            <input type="email" id="charity_email" name="charity_email" required>
+
+            <label for="charity_phone">Charity Phone:</label>
+            <input type="tel" id="charity_phone" name="charity_phone" required>
+
+            <label for="charity_location">Location (City, State, Country):</label>
+            <input type="text" id="charity_location" name="charity_location" required>
+
+            <label for="charity_type">Type of Charity:</label>
+            <select id="charity_type" name="charity_type" required>
+                <option value="Education">Education</option>
+                <option value="Health">Health</option>
+                <option value="Environment">Environment</option>
+                <option value="Animal Welfare">Animal Welfare</option>
+                <option value="Community Support">Community Support</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="charity_description">Charity Description:</label>
+            <textarea id="charity_description" name="charity_description" rows="6" required></textarea>
+
+            <label for="charity_website">Charity Website (Optional):</label>
+            <input type="url" id="charity_website" name="charity_website">
+
+            <input type="submit" value="Register Charity">
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 HelpHub. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
