@@ -3,15 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
     <title>HelpHub - Volunteer Opportunities</title>
-     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f4f4f4;
         }
+        /* Navigation bar */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333; /* Background color for the nav bar */
+            overflow: hidden;
+            text-align: center;
+        }
+        li {
+            display: inline-block; /* Makes the list items horizontal */
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px; /* Adjust font size */
+        }
+        li a:hover {
+            background-color: #111; /* Darkens the background when hovering */
+        }
+        
         .volunteer-list {
             list-style-type: none;
             padding: 0;
@@ -32,71 +55,46 @@
             color: red;
             font-weight: bold;
         }
-      li {
-  display: inline-block;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-   font-size: 30px;
-}
-
-li a:hover {
-  background-color: #111; 
-}
- 
-p {
-    text-align: center;   
-    font-family: 'Roboto', sans-serif;  
-    font-size: 30px; 
-    color: #333;      
-    line-height: 1.6;
-}
-
- footer { background-color: #333; 
-                  color: white; 
-                  background: red;
-                  text-align: center; 
-                  padding: 20px; 
-                  margin-top: auto;
-                  z-index: 1;  
-                  margin: 0;  
-            footer p {
-                  margin: 0; 
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+        p {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            color: #333;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 
-      <ul>
-           
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="charities.html">Charities</a></li>
-                <li><a href="charity_profile.html">Charity Profile</a></li>
-                 <li><a href="charity_info.html">Charity information</a></li>
-        </ul>
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="charity_profile.html">Charity Profile</a></li>
+        <li><a href="charity_info.html">Charity Information</a></li>
+    </ul>
+
     <h1>Volunteer Opportunities</h1>
     <p>Find out how to volunteer and give back to your community.</p>
 
-   
     <div id="error" class="error-message" style="display: none;"></div>
 
-    
     <ul id="volunteer-list" class="volunteer-list"></ul>
 
-   <footer>
+    <footer>
         <p>&copy; 2024 HelpHub. All rights reserved.</p>
     </footer>
 
     <script>
-       
         const apiKey = 'YOUR_VOLUNTEER_MATCH_API_KEY';
         const apiUrl = 'https://www.volunteermatch.org/api/calls/volunteering_opportunities.json';
 
-        
         async function fetchVolunteerOpportunities() {
             try {
                 const response = await fetch(apiUrl, {
@@ -113,42 +111,33 @@ p {
                 const data = await response.json();
                 const volunteerList = document.getElementById('volunteer-list');
 
-                
                 volunteerList.innerHTML = '';
 
-                
                 if (data.length === 0) {
                     document.getElementById('error').innerText = 'No volunteer opportunities found.';
                     document.getElementById('error').style.display = 'block';
                     return;
                 }
 
-                
                 data.forEach(opportunity => {
                     const li = document.createElement('li');
                     li.classList.add('volunteer-item');
-
-                    
                     li.innerHTML = `
                         <h3>${opportunity.title}</h3>
                         <p><strong>Location:</strong> ${opportunity.location}</p>
                         <p><strong>Description:</strong> ${opportunity.description}</p>
                         <a href="${opportunity.url}" target="_blank">Learn More</a>
                     `;
-
-                    
                     volunteerList.appendChild(li);
                 });
-
             } catch (error) {
-                
                 document.getElementById('error').innerText = `Error: ${error.message}`;
                 document.getElementById('error').style.display = 'block';
             }
         }
 
-        
         window.onload = fetchVolunteerOpportunities;
     </script>
+
 </body>
 </html>
