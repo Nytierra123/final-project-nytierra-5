@@ -73,18 +73,22 @@ p {
     <h1>Volunteer Opportunities</h1>
     <p>Find out how to volunteer and give back to your community.</p>
 
-    <!-- Error message placeholder -->
+   
     <div id="error" class="error-message" style="display: none;"></div>
 
-    <!-- List to display volunteer opportunities -->
+    
     <ul id="volunteer-list" class="volunteer-list"></ul>
 
+   <footer>
+        <p>&copy; 2024 HelpHub. All rights reserved.</p>
+    </footer>
+
     <script>
-        // VolunteerMatch API endpoint and key (replace with your actual API key)
+       
         const apiKey = 'YOUR_VOLUNTEER_MATCH_API_KEY';
         const apiUrl = 'https://www.volunteermatch.org/api/calls/volunteering_opportunities.json';
 
-        // Function to fetch and display volunteer opportunities
+        
         async function fetchVolunteerOpportunities() {
             try {
                 const response = await fetch(apiUrl, {
@@ -101,22 +105,22 @@ p {
                 const data = await response.json();
                 const volunteerList = document.getElementById('volunteer-list');
 
-                // Clear any previous results
+                
                 volunteerList.innerHTML = '';
 
-                // Check if there are volunteer opportunities
+                
                 if (data.length === 0) {
                     document.getElementById('error').innerText = 'No volunteer opportunities found.';
                     document.getElementById('error').style.display = 'block';
                     return;
                 }
 
-                // Display the fetched volunteer opportunities
+                
                 data.forEach(opportunity => {
                     const li = document.createElement('li');
                     li.classList.add('volunteer-item');
 
-                    // Create the content for each volunteer opportunity
+                    
                     li.innerHTML = `
                         <h3>${opportunity.title}</h3>
                         <p><strong>Location:</strong> ${opportunity.location}</p>
@@ -124,18 +128,18 @@ p {
                         <a href="${opportunity.url}" target="_blank">Learn More</a>
                     `;
 
-                    // Append each opportunity to the list
+                    
                     volunteerList.appendChild(li);
                 });
 
             } catch (error) {
-                // Handle any errors that occurred during the API call
+                
                 document.getElementById('error').innerText = `Error: ${error.message}`;
                 document.getElementById('error').style.display = 'block';
             }
         }
 
-        // Call the function to fetch and display volunteer opportunities when the page loads
+        
         window.onload = fetchVolunteerOpportunities;
     </script>
 </body>
