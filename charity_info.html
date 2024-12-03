@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity Information</title>
+ <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .charity-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .charity-item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .charity-item h3 {
+      margin: 0;
+    }
+    .error-message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Top-Rated Charities</h1>
+  <ul class="charity-list" id="charity-list"></ul>
+  <div class="error-message" id="error-message"></div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
