@@ -1,143 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - HelpHub</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HelpHub - Contact us for inquiries and support">
+    <title>Contact Us - HelpHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            background-color: #333; 
-            overflow: hidden;
-            text-align: center;
-        }
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
 
-        li {
-            display: inline-block; 
-        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+        }
 
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 18px;
-        }
+        li {
+            display: inline-block;
+        }
 
-        li a:hover {
-            background-color: #111; 
-        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 30px;
+        }
 
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+        li a:hover {
+            background-color: #111;
+        }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+        main {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+        h1 {
+            color: red;
+            font-size: 36px;
+        }
 
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
 
-        input, textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-        input[type="submit"] {
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-            border: none;
-            font-size: 18px;
-        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: inline-block;
+            text-align: left;
+        }
 
-        input[type="submit"]:hover {
-            background-color: #111;
-        }
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
 
-        footer { background-color: #333; 
-                  color: white; 
-                  background: red;
-                  text-align: center; 
-                  padding: 20px; 
-                  margin-top: auto;
-                  z-index: 1;  
-                  margin: 0;  
-            footer p {
-                  margin: 0; 
-        }
-            .contact-container img {          
-                width: 200%; 
-                height: auto;             
-                margin-bottom: 20px; 
-            }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
 
-    </style>
+        input[type="submit"]:hover {
+            background-color: #111;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            z-index: 1;
+            margin: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
-    <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="charities.html">Charities</a></li>
-        <li><a href="charity_profile.html">Charity Profile</a></li>
-        <li><a href="charity_info.html">Charity Information</a></li>
-        <li><a href="contact.html">Contact Us</a></li> 
-        <li><a href="register_charity.html">Register Charity</a></li> 
-    </ul>
+    <!-- Navigation Bar -->
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="charity_profile.html">Charity Profile</a></li>
+        <li><a href="charity_info.html">Charity Information</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="register_charity.html">Register Charity</a></li>
+    </ul>
 
-    <div class="contact-container">
-        <img src="https://cdn1.vectorstock.com/i/1000x1000/00/45/charity-logo-design-template-vector-21470045.jpg"  alt="HelpHub Charity Logo">
+    <main>
+        <img src="https://cdn1.vectorstock.com/i/1000x1000/00/45/charity-logo-design-template-vector-21470045.jpg" width="300" height="200" alt="HelpHub Charity Logo">
+        <h1>Contact Us</h1>
+        <h2>We would love to hear from you!</h2>
+        <p>Fill out the form below, and we will get back to you as soon as possible.</p>
 
-        <h1>Contact Us</h1>
-        <p>We would love to hear from you! Please fill out the form below and we will get back to you as soon as possible.</p>
+        <div class="contact-container">
+            <form action="submit_form.php" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
 
-        <form action="submit_form.php" method="POST">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
 
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </main>
 
-            <input type="submit" value="Send Message">
-        </form>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2024 HelpHub. All rights reserved.</p>
-    </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HelpHub. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
