@@ -1,129 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-        }
-        header h1 {
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            background-color: #444;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        nav ul li {
-            display: inline-block;
-        }
-        nav ul li a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-        }
-        nav ul li a:hover {
-            background-color: #575757;
-        }
-        section.contact-form {
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-        }
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        textarea {
-            resize: vertical;
-            height: 150px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - HelpHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333; 
+            overflow: hidden;
+            text-align: center;
+        }
+
+        li {
+            display: inline-block; 
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        li a:hover {
+            background-color: #111; 
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #111;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>Contact Us</h1>
-</header>
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="charities.html">Charities</a></li>
+        <li><a href="charity_profile.html">Charity Profile</a></li>
+        <li><a href="charity_info.html">Charity Information</a></li>
+        <li><a href="contact.html">Contact Us</a></li> <!-- Add the link to the contact page -->
+    </ul>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Homepage</a></li>
-        <li><a href="charities.html">Charities</a></li>
-        <li><a href="charity_profile.html">Charity Profile</a></li>
-        <li><a href="charity_info.html">Charity Information</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="register_charity.html">Register Charity</a></li>
-    </ul>
-</nav>
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you! Please fill out the form below and we will get back to you as soon as possible.</p>
 
-<section class="contact-form">
-    <h2>Get in Touch</h2>
-    <form action="submit_form.php" method="post">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        <form action="submit_form.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
 
-        <button type="submit">Send Message</button>
-    </form>
-</section>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
 
-<footer>
-    <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
-</footer>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 HelpHub. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
