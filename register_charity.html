@@ -10,9 +10,42 @@
             font-family: Arial, sans-serif;
             padding: 20px;
             background-color: #f4f4f4;
+            margin: 0;
         }
 
-       
+        /* Navigation Bar */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            background-color: #333;
+            margin-bottom: 20px;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            padding: 10px 20px;
+            display: block;
+            background-color: #333;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: red;
+            color: white;
+        }
+
+        /* Registration Form Styling */
         .registration-container {
             max-width: 700px;
             margin: 0 auto;
@@ -25,6 +58,11 @@
         h1 {
             text-align: center;
             color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
         }
 
         form {
@@ -51,111 +89,43 @@
             cursor: pointer;
             border: none;
             font-size: 18px;
+            padding: 12px;
+            transition: background-color 0.3s;
         }
 
         input[type="submit"]:hover {
             background-color: #111;
         }
 
-       footer { background-color: #333; 
-                  color: white; 
-                  background: red;
-                  text-align: center; 
-                  padding: 20px; 
-                  margin-top: auto;
-                  z-index: 1;  
-                  margin: 0;  
-            footer p {
-                  margin: 0; 
-        }
-
-                ul {
-            list-style-type: none;  
-            padding: 0;
-            margin: 0;
-            text-align: center;  
-            background-color: #333; 
-            margin-bottom: 20px;  
-        }
-
-       
-        li {
-            display: inline-block;  
-            margin: 0 15px; 
-        }
-
-       
-        a {
-            text-decoration: none; 
-            color: white; 
-            font-size: 18px;  
-            font-family: Arial, sans-serif;
-            padding: 10px 20px;
-            display: block;  
-            background-color: #333;  
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s; 
-        }
-
-      
-        a:hover {
-            background-color: red;
-            color: white;  
-        }
-
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            width: 50%;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
             text-align: center;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-top: 50px;
         }
 
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        textarea {
-            resize: vertical;
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <ul>
         <li><a href="index.html">Homepage</a></li>
         <li><a href="charities.html">Charities</a></li>
         <li><a href="charity_profile.html">Charity Profile</a></li>
         <li><a href="charity_info.html">Charity Information</a></li>
         <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="register_charity.html">Register Charity</a></li> 
+        <li><a href="register_charity.html">Register Charity</a></li>
     </ul>
 
+    <!-- Registration Form -->
     <div class="registration-container">
-        <h1> Dont see your charity you can register your charity below</h1>
+        <h1>Don't See Your Charity? Register Below!</h1>
         <p>Fill out the form below to register your charity with HelpHub.</p>
 
         <form action="submit_charity_registration.php" method="POST">
@@ -191,7 +161,8 @@
         </form>
     </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer>
         <p>&copy; 2024 HelpHub. All rights reserved.</p>
     </footer>
 
