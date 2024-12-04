@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register Your Charity</h1>
+        <form action="/submit-charity" method="POST">
+            <label for="charityName">Charity Name</label>
+            <input type="text" id="charityName" name="charityName" required>
+
+            <label for="charityDescription">Description</label>
+            <textarea id="charityDescription" name="charityDescription" rows="4" required></textarea>
+
+            <label for="charityWebsite">Website (Optional)</label>
+            <input type="url" id="charityWebsite" name="charityWebsite">
+
+            <label for="charityContact">Contact Email</label>
+            <input type="email" id="charityContact" name="charityContact" required>
+
+            <label for="charityType">Type of Charity</label>
+            <input type="text" id="charityType" name="charityType" required>
+
+            <label for="additionalInfo">Additional Information (Optional)</label>
+            <textarea id="additionalInfo" name="additionalInfo" rows="3"></textarea>
+
+            <button type="submit">Register Charity</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>By submitting this form, you agree to our <a href="#">terms and conditions</a>.</p>
+    </div>
+</body>
+</html>
