@@ -22,3 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
         formContainer.style.display = "none";  
     });
 });
+function toggleForm() {
+    var form = document.getElementById('volunteer-form');
+    if (form.style.display === "none" || form.style.display === "") {
+        form.style.display = "block"; // Show the form
+    } else {
+        form.style.display = "none"; // Hide the form
+    }
+}
