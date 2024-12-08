@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Body and general text styles */
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -20,7 +20,6 @@ header {
     text-align: center;
 }
 
-/* Footer styles */
 footer {
     background-color: #333;
     color: white;
@@ -31,7 +30,7 @@ footer {
     width: 100%;
 }
 
-/* Header and Subheading styles */
+
 h1, h2 {
     text-align: center;
     margin: 10px 0;
@@ -74,8 +73,7 @@ li a:hover {
     background-color: #111;
 }
 
-/* Main content area styles */
-main {
+ {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -89,19 +87,19 @@ main img {
     max-width: 100%;
 }
 
-/* Footer paragraph styling */
+
 footer p {
     margin: 0;
     padding: 10px;
     font-size: 1rem;
 }
 
-/* Focus and hover states for links */
+
 a:focus, a:hover {
     outline: 2px solid #ff6600;
 }
 
-/* Responsive design adjustments for smaller screens */
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
